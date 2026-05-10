@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "佳音汽车 — 专业维修与优质二手车",
+    "description": "佳音汽车：全方位汽车维修服务与精选二手车。"
+  },
+  "nav": {
+    "services": "服务项目",
+    "inventory": "二手车",
+    "contact": "联系我们",
+    "call": "拨打电话",
+    "language": "语言"
+  },
+  "home": {
+    "tagline": "值得信赖的汽车维修与优质二手车",
+    "intro": "佳音汽车提供诚信可靠的维修服务与精选二手车。家族经营,资深技师,价格公道。",
+    "viewInventory": "查看二手车",
+    "servicesHeading": "服务项目",
+    "servicesSubhead": "您的爱车保养所需,我们一应俱全。",
+    "featuredHeading": "精选车辆",
+    "featuredSubhead": "精挑细选,完整检测。",
+    "seeAll": "查看全部",
+    "noVehicles": "目前暂无车辆,敬请关注。",
+    "visitHeading": "前来拜访",
+    "hoursHeading": "营业时间",
+    "directions": "获取路线"
+  },
+  "inventory": {
+    "title": "二手车",
+    "subtitle": "所有车辆均经我们的技师全面检测。",
+    "empty": "目前暂无库存车辆。",
+    "emptySub": "新车即将到店,敬请期待!",
+    "noPhoto": "暂无照片",
+    "callForPrice": "电话询价"
+  },
+  "vehicle": {
+    "specs": {
+      "mileage": "里程",
+      "color": "颜色",
+      "condition": "车况",
+      "engine": "发动机",
+      "transmission": "变速箱",
+      "drivetrain": "驱动方式",
+      "fuel": "燃料类型",
+      "vin": "车辆识别号"
+    },
+    "about": "车辆介绍",
+    "interested": "感兴趣?",
+    "interestedBlurb": "欢迎来电预约试驾或咨询。",
+    "emailUs": "电邮我们",
+    "emailSubject": "咨询车辆",
+    "notFound": "找不到该车辆",
+    "notFoundSub": "可能已经售出。",
+    "back": "返回二手车列表"
+  },
+  "footer": {
+    "visitUs": "前来拜访",
+    "contact": "联系我们",
+    "rights": "保留所有权利。"
+  },
+  "services": {
+    "oil-change": {
+      "title": "更换机油及定期保养",
+      "blurb": "保养您的发动机。合成机油与普通机油,含油液检查。"
+    },
+    "brakes": {
+      "title": "刹车维修",
+      "blurb": "刹车片、刹车盘、卡钳 — 完整刹车系统检测与更换。"
+    },
+    "tires": {
+      "title": "轮胎与四轮定位",
+      "blurb": "新轮胎、换位、平衡及四轮定位。"
+    },
+    "diagnostics": {
+      "title": "发动机诊断",
+      "blurb": "故障灯亮?全面电脑诊断及根本原因维修。"
+    },
+    "ac": {
+      "title": "空调与暖气",
+      "blurb": "加冷媒、漏点修复、压缩机维修。"
+    },
+    "used-vehicles": {
+      "title": "优质二手车",
+      "blurb": "精挑细选、严格检测的二手车。查看现有库存。"
+    }
+  },
+  "hours": {
+    "weekdays": "周一至周五",
+    "saturday": "周六",
+    "sunday": "周日",
+    "weekdaysTime": "上午 8:00 – 下午 6:00",
+    "saturdayTime": "上午 9:00 – 下午 3:00",
+    "closed": "休息"
+  }
+}

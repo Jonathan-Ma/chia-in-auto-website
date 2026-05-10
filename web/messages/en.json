@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Chia-In Auto — Trusted auto repair & quality used vehicles",
+    "description": "Chia-In Auto: full-service auto shop and used vehicles."
+  },
+  "nav": {
+    "services": "Services",
+    "inventory": "Inventory",
+    "contact": "Contact",
+    "call": "Call",
+    "language": "Language"
+  },
+  "home": {
+    "tagline": "Trusted auto repair & quality used vehicles",
+    "intro": "Chia-In Auto is your one-stop shop for honest auto repair and quality used vehicles. Family-owned, expert technicians, fair prices.",
+    "viewInventory": "View inventory",
+    "servicesHeading": "Services",
+    "servicesSubhead": "Everything you need to keep your vehicle running.",
+    "featuredHeading": "Featured vehicles",
+    "featuredSubhead": "Hand-picked, fully inspected.",
+    "seeAll": "See all",
+    "noVehicles": "No vehicles listed yet. Check back soon.",
+    "visitHeading": "Visit us",
+    "hoursHeading": "Hours",
+    "directions": "Get directions"
+  },
+  "inventory": {
+    "title": "Used vehicles",
+    "subtitle": "All vehicles fully inspected by our technicians.",
+    "empty": "No vehicles in stock right now.",
+    "emptySub": "New inventory coming soon — check back!",
+    "noPhoto": "No photo",
+    "callForPrice": "Call for price"
+  },
+  "vehicle": {
+    "specs": {
+      "mileage": "Mileage",
+      "color": "Color",
+      "condition": "Condition",
+      "engine": "Engine",
+      "transmission": "Transmission",
+      "drivetrain": "Drivetrain",
+      "fuel": "Fuel",
+      "vin": "VIN"
+    },
+    "about": "About this vehicle",
+    "interested": "Interested?",
+    "interestedBlurb": "Call us to schedule a test drive or to ask any questions.",
+    "emailUs": "Email us",
+    "emailSubject": "Interested in",
+    "notFound": "Vehicle not found",
+    "notFoundSub": "It may have already been sold.",
+    "back": "Back to inventory"
+  },
+  "footer": {
+    "visitUs": "Visit us",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "services": {
+    "oil-change": {
+      "title": "Oil change & routine maintenance",
+      "blurb": "Keep your engine healthy. Synthetic and conventional, fluid checks included."
+    },
+    "brakes": {
+      "title": "Brake service",
+      "blurb": "Pads, rotors, calipers — full brake system inspection and replacement."
+    },
+    "tires": {
+      "title": "Tires & alignment",
+      "blurb": "New tires, rotation, balancing, and 4-wheel alignment."
+    },
+    "diagnostics": {
+      "title": "Engine diagnostics",
+      "blurb": "Check-engine light? Full computer scan and root-cause repair."
+    },
+    "ac": {
+      "title": "AC & heating",
+      "blurb": "Recharge, leak repair, compressor service."
+    },
+    "used-vehicles": {
+      "title": "Quality used vehicles",
+      "blurb": "Hand-picked, inspected used cars and trucks. See current inventory."
+    }
+  },
+  "hours": {
+    "weekdays": "Mon – Fri",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "weekdaysTime": "8:00 AM – 6:00 PM",
+    "saturdayTime": "9:00 AM – 3:00 PM",
+    "closed": "Closed"
+  }
+}

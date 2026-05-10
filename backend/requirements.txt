@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+sqlalchemy
+alembic
+httpx
+requests
+google-genai
+python-telegram-bot
+cloudinary

@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Chia-In Auto — Reparación confiable y vehículos usados de calidad",
+    "description": "Chia-In Auto: taller mecánico completo y vehículos usados."
+  },
+  "nav": {
+    "services": "Servicios",
+    "inventory": "Inventario",
+    "contact": "Contacto",
+    "call": "Llamar",
+    "language": "Idioma"
+  },
+  "home": {
+    "tagline": "Reparación automotriz confiable y vehículos usados de calidad",
+    "intro": "Chia-In Auto es su taller de confianza para reparaciones honestas y vehículos usados de calidad. Negocio familiar, técnicos expertos, precios justos.",
+    "viewInventory": "Ver inventario",
+    "servicesHeading": "Servicios",
+    "servicesSubhead": "Todo lo que necesita para mantener su vehículo en marcha.",
+    "featuredHeading": "Vehículos destacados",
+    "featuredSubhead": "Seleccionados a mano, totalmente inspeccionados.",
+    "seeAll": "Ver todos",
+    "noVehicles": "Aún no hay vehículos publicados. Vuelva pronto.",
+    "visitHeading": "Visítenos",
+    "hoursHeading": "Horario",
+    "directions": "Cómo llegar"
+  },
+  "inventory": {
+    "title": "Vehículos usados",
+    "subtitle": "Todos los vehículos completamente inspeccionados por nuestros técnicos.",
+    "empty": "No hay vehículos en stock en este momento.",
+    "emptySub": "Pronto llegará nuevo inventario — ¡vuelva pronto!",
+    "noPhoto": "Sin foto",
+    "callForPrice": "Llame por precio"
+  },
+  "vehicle": {
+    "specs": {
+      "mileage": "Kilometraje",
+      "color": "Color",
+      "condition": "Condición",
+      "engine": "Motor",
+      "transmission": "Transmisión",
+      "drivetrain": "Tracción",
+      "fuel": "Combustible",
+      "vin": "VIN"
+    },
+    "about": "Acerca de este vehículo",
+    "interested": "¿Interesado?",
+    "interestedBlurb": "Llámenos para programar una prueba de manejo o resolver cualquier duda.",
+    "emailUs": "Envíenos un correo",
+    "emailSubject": "Interesado en",
+    "notFound": "Vehículo no encontrado",
+    "notFoundSub": "Es posible que ya se haya vendido.",
+    "back": "Volver al inventario"
+  },
+  "footer": {
+    "visitUs": "Visítenos",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "services": {
+    "oil-change": {
+      "title": "Cambio de aceite y mantenimiento",
+      "blurb": "Mantenga su motor saludable. Aceite sintético y convencional, revisión de fluidos incluida."
+    },
+    "brakes": {
+      "title": "Servicio de frenos",
+      "blurb": "Pastillas, discos, calipers — inspección y reemplazo completo del sistema de frenos."
+    },
+    "tires": {
+      "title": "Llantas y alineación",
+      "blurb": "Llantas nuevas, rotación, balanceo y alineación de las cuatro ruedas."
+    },
+    "diagnostics": {
+      "title": "Diagnóstico de motor",
+      "blurb": "¿Luz de check engine? Escaneo computarizado completo y reparación de raíz."
+    },
+    "ac": {
+      "title": "Aire acondicionado y calefacción",
+      "blurb": "Recarga, reparación de fugas, servicio de compresor."
+    },
+    "used-vehicles": {
+      "title": "Vehículos usados de calidad",
+      "blurb": "Autos y camionetas usados seleccionados e inspeccionados. Vea el inventario actual."
+    }
+  },
+  "hours": {
+    "weekdays": "Lun – Vie",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "weekdaysTime": "8:00 AM – 6:00 PM",
+    "saturdayTime": "9:00 AM – 3:00 PM",
+    "closed": "Cerrado"
+  }
+}
