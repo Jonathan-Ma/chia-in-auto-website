@@ -7,7 +7,6 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 const wordmarkFont = Playfair_Display({
   subsets: ["latin"],
   weight: ["500"],
-  style: ["italic"],
 });
 
 export function Header({ locale }: { locale: Locale }) {
@@ -16,16 +15,17 @@ export function Header({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
-        <Link href={`/${locale}`} className="flex flex-col items-center gap-0.5 leading-none">
+        <Link href={`/${locale}`} className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.png"
-            alt="嘉音 / Chia-In Auto"
-            className="h-14 w-auto sm:h-16"
+            alt="嘉音 / Chia-In Auto Repair"
+            className="h-16 w-auto sm:h-20"
           />
-          <span className={`${wordmarkFont.className} text-sm sm:text-base tracking-wide text-neutral-800`}>
-            Chia-In Auto
-          </span>
+          <div className={`${wordmarkFont.className} leading-tight text-neutral-800`}>
+            <div className="text-sm uppercase tracking-[0.18em] sm:text-base">Chia-In</div>
+            <div className="text-sm uppercase tracking-[0.18em] sm:text-base">Auto Repair</div>
+          </div>
         </Link>
         <nav className="flex items-center gap-3 text-sm sm:gap-4 sm:text-base">
           <Link href={`/${locale}#services`} className="hover:text-brand">{t.services}</Link>

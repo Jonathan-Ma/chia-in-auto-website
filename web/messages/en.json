@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Chia-In Auto — Trusted auto repair & quality used vehicles",
-    "description": "Chia-In Auto: full-service auto shop and used vehicles."
+    "title": "Chia-In Auto Repair — Trusted service & quality used vehicles",
+    "description": "Chia-In Auto Repair: family-owned full-service auto shop and used vehicles."
   },
   "nav": {
     "services": "Services",
@@ -12,7 +12,7 @@
   },
   "home": {
     "tagline": "Trusted auto repair & quality used vehicles",
-    "intro": "Chia-In Auto is your one-stop shop for honest auto repair and quality used vehicles. Family-owned, expert technicians, fair prices.",
+    "intro": "Chia-In Auto Repair is your family-owned, full-service shop for honest repairs and quality used vehicles. Expert technicians, fair prices.",
     "viewInventory": "View inventory",
     "servicesHeading": "Services",
     "servicesSubhead": "Everything you need to keep your vehicle running.",

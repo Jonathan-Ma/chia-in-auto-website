@@ -4,7 +4,8 @@
  * Service slugs here MUST match keys under "services" in the message files.
  */
 export const site = {
-  name: "Chia-In Auto",
+  name: "Chia-In Auto Repair",
+  legalName: "Chia-In Auto Repair Corp.",
   phone: "(555) 123-4567",
   email: "info@chia-in-auto.example",
   address: {

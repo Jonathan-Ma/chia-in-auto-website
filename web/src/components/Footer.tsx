@@ -29,7 +29,7 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
       </div>
       <div className="border-t border-neutral-200 py-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} {site.name}. {dict.footer.rights}
+        © {new Date().getFullYear()} {site.legalName} {dict.footer.rights}
       </div>
     </footer>
   );
