@@ -10,7 +10,8 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href={`/${locale}`} className="flex items-center gap-2">
-          <span className="text-2xl">🚗</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.jpg" alt="嘉音 / Chia-In Auto" className="h-10 w-auto sm:h-12" />
           <span className="font-bold text-lg sm:text-xl">{site.name}</span>
         </Link>
         <nav className="flex items-center gap-3 text-sm sm:gap-4 sm:text-base">
