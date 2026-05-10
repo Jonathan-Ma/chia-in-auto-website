@@ -20,11 +20,11 @@ export function Header({ locale }: { locale: Locale }) {
           <img
             src="/logo.png"
             alt="嘉音 / Chia-In Auto Repair"
-            className="h-16 w-auto sm:h-20"
+            className="h-14 w-auto sm:h-20 lg:h-24"
           />
-          <div className={`${wordmarkFont.className} leading-tight text-neutral-800`}>
-            <div className="text-sm uppercase tracking-[0.18em] sm:text-base">Chia-In</div>
-            <div className="text-sm uppercase tracking-[0.18em] sm:text-base">Auto Repair</div>
+          <div className={`${wordmarkFont.className} hidden leading-tight text-neutral-800 sm:block`}>
+            <div className="text-base uppercase tracking-[0.18em] lg:text-lg">Chia-In</div>
+            <div className="text-base uppercase tracking-[0.18em] lg:text-lg">Auto Repair</div>
           </div>
         </Link>
         <nav className="flex items-center gap-3 text-sm sm:gap-4 sm:text-base">
