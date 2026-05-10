@@ -139,6 +139,11 @@ The bot is operator-only. Add your Telegram user ID to `TELEGRAM_ALLOWED_USER_ID
 - The bot writes through `repository.py`; the API reads through it. Nobody else touches the DB
 - Switching to Postgres later is one line: change `DATABASE_URL` in `.env`
 
+## Roadmap
+
+See [BACKLOG.md](./BACKLOG.md) — launch blockers, planned features (appointment
+booking, car rental), incremental polish, and tech/ops items.
+
 ## License
 
 Private project. All rights reserved.
