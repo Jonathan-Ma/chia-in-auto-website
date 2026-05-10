@@ -26,12 +26,98 @@ Things that should be done before showing the live site to customers.
 - [ ] Same review for `web/messages/es.json` by a native Spanish speaker
 
 ### Deployment
-- [ ] Pick hosts (suggested: Vercel for `web/`, Fly.io or Railway for `backend/`)
-- [ ] Provision a real Postgres database (swap `DATABASE_URL` in `.env`)
-- [ ] Buy domain, set up HTTPS
-- [ ] Configure production CORS in `app/config.py` (`FRONTEND_ORIGIN`)
-- [ ] Telegram bot needs to run as a long-lived process — pick a worker (Fly.io background machine, Railway worker, or a tiny VPS)
-- [ ] Database backup strategy (nightly dump → S3 or similar)
+
+End-to-end checklist for taking the site from localhost to live. Substeps roughly in the order you'd do them.
+
+**1. Domain**
+- [ ] Pick a domain name (e.g. `chia-in-auto.com`, `chiainauto.com`). Stick with `.com` if available; optionally also grab `.net` and common typos to redirect later
+- [ ] Choose a registrar. Recommended: **Cloudflare Registrar** (sells at cost, no upsells) or **Porkbun**. Avoid GoDaddy / Network Solutions — overpriced renewals
+- [ ] Create the registrar account
+- [ ] Purchase the domain
+- [ ] Enable WHOIS privacy (free on Cloudflare and Porkbun)
+- [ ] Enable auto-renewal so it doesn't lapse
+
+**2. DNS (recommended: Cloudflare)**
+- [ ] Create a Cloudflare account if not using Cloudflare Registrar
+- [ ] Add the domain to Cloudflare
+- [ ] Update nameservers at the registrar to point to Cloudflare
+- [ ] Plan the records: `@` (apex) → frontend, `www` → frontend, `api.` → backend
+
+**3. Frontend hosting (Vercel)**
+- [ ] Create Vercel account (sign in with GitHub for one-click repo import)
+- [ ] Import the `chia-in-auto-website` repo
+- [ ] Set "Root Directory" to `web/`
+- [ ] Add env var: `NEXT_PUBLIC_API_URL=https://api.<your-domain>`
+- [ ] Verify the build succeeds on Vercel
+- [ ] Add custom domain `<your-domain>` and `www.<your-domain>` in Vercel project settings
+- [ ] Add the DNS records Vercel asks for (in Cloudflare)
+- [ ] Confirm HTTPS works (automatic)
+
+**4. Backend hosting (Fly.io or Railway)**
+- [ ] Pick one. Recommended: **Fly.io** for the flexibility to also run the Telegram bot as a sibling process
+- [ ] Create account, install CLI (`brew install flyctl`)
+- [ ] Write `backend/Dockerfile` (python:3.11-slim + requirements + uvicorn)
+- [ ] Generate `backend/fly.toml` via `fly launch`
+- [ ] Deploy: `fly deploy`
+- [ ] Add custom subdomain `api.<your-domain>` in Fly dashboard
+- [ ] Add CNAME in Cloudflare pointing to Fly's hostname
+- [ ] Verify HTTPS (automatic via Let's Encrypt)
+
+**5. Production database (Postgres)**
+- [ ] **Before this:** migrate from auto-create-tables to **Alembic** (see Tech/ops section) — required for safe schema changes in production
+- [ ] Pick a provider:
+  - **Supabase** — managed, generous free tier, automatic daily backups
+  - **Neon** — modern, branching, free tier
+  - **Fly.io Postgres** — convenient if backend is on Fly, but you manage backups
+- [ ] Provision the DB, copy the connection string
+- [ ] Set secret on the backend host: `fly secrets set DATABASE_URL=postgres://...`
+- [ ] Run initial Alembic migration against production
+
+**6. Backend secrets (production .env values)**
+- [ ] On Fly/Railway, set these as secrets (mirroring `.env.example`):
+  - `TELEGRAM_BOT_TOKEN`
+  - `TELEGRAM_ALLOWED_USER_IDS`
+  - `GEMINI_API_KEY`
+  - `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET`
+  - `DATABASE_URL` (production Postgres)
+  - `FRONTEND_ORIGIN=https://<your-domain>` (for CORS)
+- [ ] Never commit production secrets to git
+
+**7. Telegram bot as a long-running worker**
+- [ ] On Fly: add a second process in `fly.toml` (e.g. `processes.bot = "python -m app.interfaces.telegram_bot"`)
+- [ ] On Railway: create a separate "worker" service in the same project
+- [ ] Set restart policy: always restart on crash
+- [ ] Test: send `/list` to the bot in production, confirm it responds
+
+**8. Verification**
+- [ ] Visit `https://<your-domain>` — site loads, all three languages work
+- [ ] Devtools network tab: API requests go to `https://api.<your-domain>` over HTTPS
+- [ ] Publish a vehicle via the bot — confirm it appears on the production website within 10 seconds
+- [ ] No CORS errors in the browser console
+
+**9. Backups & monitoring**
+- [ ] Confirm daily Postgres backups are running (Supabase/Neon do automatically; Fly Postgres needs config)
+- [ ] Test restoring a backup at least once
+- [ ] Add **Sentry** to backend (`pip install sentry-sdk`) and frontend (`@sentry/nextjs`) — free tier
+- [ ] Set up uptime monitoring (**UptimeRobot** or **Better Stack**, free tier) — ping `https://api.<your-domain>/health` every minute, alert by email/SMS on failure
+
+**10. Email (needed once appointment booking ships)**
+- [ ] Sign up for **Resend** or **Postmark** (free transactional tiers)
+- [ ] Add an `RESEND_API_KEY` env var
+- [ ] Verify the sending domain (DNS records in Cloudflare)
+
+### Online presence (do alongside deployment — this is what actually puts you on Google Maps)
+
+The Google Maps embed in the site is decorative. The real traffic driver for an
+autoshop is the **Google Business Profile** + reviews.
+
+- [ ] **Google Business Profile** (formerly "Google My Business") — verify the shop's physical address (Google mails a postcard with a verification code, ~5 business days). Add photos, hours, all services, the website URL once it's live. Free.
+- [ ] **Google Search Console** — verify domain ownership (TXT record in Cloudflare), submit sitemap.xml once it exists
+- [ ] **Apple Business Connect** — Apple Maps listing, free
+- [ ] **Bing Places** — small audience but trivial to set up
+- [ ] **Yelp** business listing — claim it if one already exists, fill it out, ask happy customers to leave reviews
+- [ ] **Facebook page** — for community / WeChat-style discoverability with local customers
+- [ ] Add Schema.org `AutoRepair` and `AutoDealer` structured data on the home page (also listed under Site polish)
 
 ---
 
