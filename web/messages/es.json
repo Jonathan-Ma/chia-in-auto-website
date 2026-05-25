@@ -15,10 +15,45 @@
     "intro": "Chia-In Auto Repair es su taller familiar de servicio completo para reparaciones honestas y vehículos usados de calidad. Técnicos expertos, precios justos.",
     "viewInventory": "Ver inventario",
     "servicesHeading": "Servicios",
-    "servicesSubhead": "Todo lo que necesita para mantener su vehículo en marcha.",
+    "servicesSubhead": "Categorías claras y sencillas para el cuidado diario de su vehículo.",
+    "servicesCards": [
+      {
+        "title": "Cambio de aceite y mantenimiento",
+        "description": "Mantenimiento rutinario, cambios de aceite, revisión de fluidos, filtros e inspecciones básicas."
+      },
+      {
+        "title": "Reparación de frenos",
+        "description": "Pastillas, discos, ruidos de frenos, pedal suave y advertencias de freno."
+      },
+      {
+        "title": "Luz de revisión y diagnóstico",
+        "description": "Escaneos de diagnóstico y solución de problemas para identificar el origen de las luces de advertencia o problemas de rendimiento."
+      },
+      {
+        "title": "Batería y problemas de arranque",
+        "description": "Prueba de batería, problemas del alternador, arranque y coches que no encienden."
+      },
+      {
+        "title": "Llantas y alineación",
+        "description": "Reemplazo de llantas, balanceo, rotación, alineación, desgaste irregular y tirones al conducir."
+      },
+      {
+        "title": "Aire acondicionado y calefacción",
+        "description": "Aire acondicionado, problemas de calefacción, flujo de aire débil, olores extraños o problemas de temperatura."
+      },
+      {
+        "title": "Suspensión y dirección",
+        "description": "Vibraciones, tirones, manejo brusco, ruidos, problemas de dirección y reparaciones de suspensión."
+      },
+      {
+        "title": "Reparación general",
+        "description": "Reparación general y solución de problemas para problemas comunes del vehículo."
+      }
+    ],
+    "servicesFallback": "¿No ve lo que necesita? Atendemos la mayoría de reparaciones generales y diagnósticos. Cuéntenos qué le pasa a su auto y le diremos si podemos ayudar.",
+    "servicesFallbackCta": "Preguntar por un servicio",
     "featuredHeading": "Vehículos destacados",
-    "featuredSubhead": "Seleccionados a mano, totalmente inspeccionados.",
-    "seeAll": "Ver todos",
+    "featuredSubhead": "Seleccionados a mano, totalmente inspeccionados.",    "seeAll": "Ver todos",
     "noVehicles": "Aún no hay vehículos publicados. Vuelva pronto.",
     "visitHeading": "Visítenos",
     "hoursHeading": "Horario",
@@ -85,10 +120,15 @@
   },
   "hours": {
     "weekdays": "Lun – Vie",
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes",
     "saturday": "Sábado",
     "sunday": "Domingo",
-    "weekdaysTime": "8:00 AM – 6:00 PM",
-    "saturdayTime": "9:00 AM – 3:00 PM",
+    "weekdaySplitTime": "8:30 AM–12:30 PM\n1:30–4:30 PM",
+    "saturdayTime": "8:30 AM–12:30 PM",
     "closed": "Cerrado"
   }
 }

@@ -2,7 +2,8 @@ import { listVehicles } from "@/lib/api";
 import { VehicleCard } from "@/components/VehicleCard";
 import { getDict, type Locale } from "@/i18n/dictionaries";
 
-export default async function InventoryPage({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function InventoryPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   const dict = getDict(locale);
   const vehicles = await listVehicles();
 

@@ -8,10 +8,11 @@ export default async function VehiclePage({
 }: { params: { id: string; locale: Locale } }) {
   const id = Number(params.id);
   if (!Number.isFinite(id)) notFound();
+  const { locale } = params;
   const v = await getVehicle(id);
   if (!v) notFound();
 
-  const dict = getDict(params.locale);
+  const dict = getDict(locale);
   const title = vehicleTitle(v);
   const price = v.price == null
     ? dict.inventory.callForPrice

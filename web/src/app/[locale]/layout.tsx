@@ -9,9 +9,12 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export function generateMetadata({
-  params: { locale },
-}: { params: { locale: string } }): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const dict = getDict(locale);
   return {
     title: dict.meta.title,
@@ -26,13 +29,14 @@ export function generateMetadata({
 
 export const viewport = { width: "device-width", initialScale: 1 };
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const typedLocale: Locale = locale;
 

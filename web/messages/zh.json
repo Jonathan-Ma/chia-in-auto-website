@@ -15,7 +15,43 @@
     "intro": "佳音汽车提供诚信可靠的维修服务与精选二手车。家族经营,资深技师,价格公道。",
     "viewInventory": "查看二手车",
     "servicesHeading": "服务项目",
-    "servicesSubhead": "您的爱车保养所需,我们一应俱全。",
+    "servicesSubhead": "清晰、易懂的服务分类，让您安心保养爱车。",
+    "servicesCards": [
+      {
+        "title": "机油更换与保养",
+        "description": "例行保养、机油更换、油液检查、滤清器和基础检查。"
+      },
+      {
+        "title": "刹车维修",
+        "description": "刹车片、刹车盘、刹车异响、刹车踏板变软和刹车灯问题。"
+      },
+      {
+        "title": "故障灯与诊断",
+        "description": "诊断扫描和故障排查，找出警示灯或性能问题的原因。"
+      },
+      {
+        "title": "电池与启动问题",
+        "description": "电池测试、发电机问题、起动机故障，以及车辆无法启动。"
+      },
+      {
+        "title": "轮胎与定位",
+        "description": "换胎、动平衡、轮胎换位、车轮定位、不均匀磨损和行驶偏移。"
+      },
+      {
+        "title": "空调与暖气",
+        "description": "空调、暖气问题、风力弱、异味或温度异常。"
+      },
+      {
+        "title": "悬挂与转向",
+        "description": "抖动、偏移、颠簸、异响、转向问题和悬挂维修。"
+      },
+      {
+        "title": "一般汽车维修",
+        "description": "常见车辆问题的一般维修和故障排查。"
+      }
+    ],
+    "servicesFallback": "找不到您需要的服务？我们可处理大多数一般维修和诊断。告诉我们您的车辆状况，我们会告诉您是否可以帮忙。",
+    "servicesFallbackCta": "咨询服务",
     "featuredHeading": "精选车辆",
     "featuredSubhead": "精挑细选,完整检测。",
     "seeAll": "查看全部",
@@ -85,10 +121,15 @@
   },
   "hours": {
     "weekdays": "周一至周五",
+    "monday": "周一",
+    "tuesday": "周二",
+    "wednesday": "周三",
+    "thursday": "周四",
+    "friday": "周五",
     "saturday": "周六",
     "sunday": "周日",
-    "weekdaysTime": "上午 8:00 – 下午 6:00",
-    "saturdayTime": "上午 9:00 – 下午 3:00",
+    "weekdaySplitTime": "上午 8:30–12:30\n下午 1:30–4:30",
+    "saturdayTime": "上午 8:30–12:30",
     "closed": "休息"
   }
 }

@@ -15,7 +15,43 @@
     "intro": "Chia-In Auto Repair is your family-owned, full-service shop for honest repairs and quality used vehicles. Expert technicians, fair prices.",
     "viewInventory": "View inventory",
     "servicesHeading": "Services",
-    "servicesSubhead": "Everything you need to keep your vehicle running.",
+    "servicesSubhead": "Clear, customer-friendly service categories for everyday car care.",
+    "servicesCards": [
+      {
+        "title": "Oil Change & Maintenance",
+        "description": "Routine maintenance, oil changes, fluid checks, filters, and basic inspections."
+      },
+      {
+        "title": "Brake Repair",
+        "description": "Brake pads, rotors, brake noise, soft brake pedal, and brake warning light concerns."
+      },
+      {
+        "title": "Check Engine Light & Diagnostics",
+        "description": "Diagnostic scans and troubleshooting to identify the cause of warning lights or performance issues."
+      },
+      {
+        "title": "Battery & Starting Issues",
+        "description": "Battery testing, alternator issues, starter problems, and cars that will not start."
+      },
+      {
+        "title": "Tires & Alignment",
+        "description": "Tire replacement, balancing, rotation, wheel alignment, uneven wear, and pulling while driving."
+      },
+      {
+        "title": "A/C & Heating",
+        "description": "Air conditioning, heater problems, weak airflow, strange smells, or temperature issues."
+      },
+      {
+        "title": "Suspension & Steering",
+        "description": "Shaking, pulling, rough ride, clunking noises, steering problems, and suspension repairs."
+      },
+      {
+        "title": "General Auto Repair",
+        "description": "General repair and troubleshooting for common vehicle issues."
+      }
+    ],
+    "servicesFallback": "Don’t see what you need? We handle most general repairs and diagnostics. Tell us what’s going on with your car and we’ll let you know if we can help.",
+    "servicesFallbackCta": "Ask About a Service",
     "featuredHeading": "Featured vehicles",
     "featuredSubhead": "Hand-picked, fully inspected.",
     "seeAll": "See all",
@@ -85,10 +121,15 @@
   },
   "hours": {
     "weekdays": "Mon – Fri",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
     "saturday": "Saturday",
     "sunday": "Sunday",
-    "weekdaysTime": "8:00 AM – 6:00 PM",
-    "saturdayTime": "9:00 AM – 3:00 PM",
+    "weekdaySplitTime": "8:30 AM–12:30 PM\n1:30–4:30 PM",
+    "saturdayTime": "8:30 AM–12:30 PM",
     "closed": "Closed"
   }
 }

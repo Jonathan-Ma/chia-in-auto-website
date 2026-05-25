@@ -6,14 +6,14 @@
 export const site = {
   name: "Chia-In Auto Repair",
   legalName: "Chia-In Auto Repair Corp.",
-  phone: "(555) 123-4567",
+  phone: "+1(626)-448-4829",
   email: "info@chia-in-auto.example",
   address: {
-    line1: "123 Main Street",
+    line1: "9549 Garvey Ave",
     line2: "",
-    city: "Your City",
-    region: "ST",
-    postal: "00000",
+    city: "South El Monte",
+    region: "CA",
+    postal: "91733",
     country: "USA",
   },
   // Paste from Google Maps → Share → Embed a map → copy the src=
