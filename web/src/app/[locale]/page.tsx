@@ -11,7 +11,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   const vehicles = (await listVehicles()).slice(0, 3);
 
   const hours = [
-    { day: dict.hours.weekdays, time: dict.hours.weekdaysTime },
+    { day: dict.hours.monday, time: dict.hours.closed },
+    { day: dict.hours.tuesday, time: dict.hours.weekdaySplitTime },
+    { day: dict.hours.wednesday, time: dict.hours.weekdaySplitTime },
+    { day: dict.hours.thursday, time: dict.hours.weekdaySplitTime },
+    { day: dict.hours.friday, time: dict.hours.weekdaySplitTime },
     { day: dict.hours.saturday, time: dict.hours.saturdayTime },
     { day: dict.hours.sunday, time: dict.hours.closed },
   ];
@@ -19,31 +23,60 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   return (
     <div className="space-y-16 py-8">
       {/* Hero */}
-      <section className="rounded-2xl bg-gradient-to-br from-brand to-brand-dark px-6 py-12 text-white sm:px-12 sm:py-20">
-        <h1 className="text-3xl font-extrabold sm:text-5xl">{dict.home.tagline}</h1>
-        <p className="mt-4 max-w-2xl text-base sm:text-lg opacity-90">{dict.home.intro}</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a href={`tel:${site.phone}`} className="rounded-full bg-white px-5 py-2.5 font-semibold text-brand hover:bg-brand-light">
-            📞 {site.phone}
-          </a>
-          <Link href={`/${locale}/inventory`} className="rounded-full border border-white/60 px-5 py-2.5 font-semibold hover:bg-white/10">
-            {dict.home.viewInventory} →
-          </Link>
+      <section className="relative overflow-hidden rounded-2xl px-6 py-12 text-white sm:px-12 sm:py-20">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat filter"
+          style={{ backgroundImage: "url('/chia in full ai copy.jpeg')" }}
+        />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative mx-auto max-w-5xl rounded-[32px] p-8 sm:p-10">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+            {dict.home.tagline}
+          </h1>
+          <p className="mt-4 max-w-3xl text-base font-medium text-white/90 sm:text-lg">
+            {dict.home.intro}
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={`tel:${site.phone}`} className="rounded-full bg-white px-5 py-2.5 font-semibold text-brand hover:bg-brand-light">
+              📞 {site.phone}
+            </a>
+            <Link href={`/${locale}/inventory`} className="rounded-full border border-white/60 px-5 py-2.5 font-semibold hover:bg-white/10">
+              {dict.home.viewInventory} →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Services */}
       <section id="services">
-        <h2 className="text-2xl font-bold sm:text-3xl">{dict.home.servicesHeading}</h2>
-        <p className="mt-2 text-neutral-600">{dict.home.servicesSubhead}</p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {site.serviceSlugs.map((slug) => (
-            <div key={slug} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-              <div className="text-3xl">{site.serviceIcons[slug]}</div>
-              <h3 className="mt-3 font-semibold">{dict.services[slug].title}</h3>
-              <p className="mt-1 text-sm text-neutral-600">{dict.services[slug].blurb}</p>
+        <div className="sm:flex sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-2xl font-bold sm:text-3xl">{dict.home.servicesHeading}</h2>
+            <p className="mt-2 max-w-2xl text-neutral-600">{dict.home.servicesSubhead}</p>
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {dict.home.servicesCards.map((service) => (
+            <div key={service.title} className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              <h3 className="font-semibold text-lg text-neutral-900">{service.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-neutral-600">{service.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 rounded-3xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm leading-6 text-neutral-700">
+              {dict.home.servicesFallback}
+            </p>
+            <Link
+              href={`/${locale}#contact`}
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark"
+            >
+              {dict.home.servicesFallbackCta}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -81,7 +114,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
           <ul className="mt-2 space-y-1 text-sm">
             {hours.map((h) => (
               <li key={h.day} className="flex justify-between border-b border-dashed border-neutral-200 py-1">
-                <span>{h.day}</span><span className="text-neutral-600">{h.time}</span>
+                <span>{h.day}</span>
+                <span className="text-right text-neutral-600 whitespace-pre-line">{h.time}</span>
               </li>
             ))}
           </ul>
