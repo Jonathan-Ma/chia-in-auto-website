@@ -16,10 +16,11 @@ export const site = {
     postal: "91733",
     country: "USA",
   },
-  // Paste from Google Maps → Share → Embed a map → copy the src=
+  // Embed the actual shop location from Google Maps.
   mapsEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.123!2d-74.0!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM0JzU2LjAiTiA3NMKwMDAnMDAuMCJX!5e0!3m2!1sen!2sus!4v0",
-  mapsLink: "https://maps.google.com/?q=Chia-In+Auto",
+    "https://www.google.com/maps?q=Chia-In+Auto+Repair+9549+Garvey+Ave+South+El+Monte+CA+91733&z=17&output=embed",
+  mapsLink:
+    "https://www.google.com/maps/search/?api=1&query=Chia-In+Auto+Repair+9549+Garvey+Ave+South+El+Monte+CA+91733",
   serviceSlugs: [
     "oil-change",
     "brakes",
