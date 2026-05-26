@@ -23,8 +23,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div>
           <h3 className="font-bold">{dict.footer.contact}</h3>
           <p className="mt-2 text-sm text-neutral-600">
-            <a href={`tel:${site.phone}`} className="hover:underline">{site.phone}</a><br />
-            <a href={`mailto:${site.email}`} className="hover:underline">{site.email}</a>
+            <a href={`tel:${site.phone}`} className="hover:underline">{site.phone}</a>
           </p>
         </div>
       </div>
