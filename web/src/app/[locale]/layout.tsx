@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import "../globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -46,6 +47,18 @@ export default async function LocaleLayout({
         <Header locale={typedLocale} />
         <main className="mx-auto max-w-6xl px-4">{children}</main>
         <Footer locale={typedLocale} />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TK030J6K90"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TK030J6K90');
+          `}
+        </Script>
       </body>
     </html>
   );
