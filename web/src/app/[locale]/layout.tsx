@@ -59,6 +59,10 @@ export async function generateMetadata({
     keywords: locale === "zh"
       ? ["汽车维修", "二手车", "佳音汽车", "修车", "南艾尔蒙地", "汽车保养"]
       : ["auto repair", "used cars", "mechanic", "South El Monte", "car maintenance"],
+    icons: {
+      icon: "/logo.png",
+      apple: "/logo.png",
+    },
     authors: [{ name: site.name }],
     // Tell Google (and Baidu) the geo target
     other: {
