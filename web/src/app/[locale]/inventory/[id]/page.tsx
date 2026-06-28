@@ -7,14 +7,14 @@ import { getDict, locales, type Locale } from "@/i18n/dictionaries";
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string; locale: Locale };
+  params: Promise<{ id: string; locale: Locale }>;
 }): Promise<Metadata> {
-  const id = Number(params.id);
+  const { id: idStr, locale } = await params;
+  const id = Number(idStr);
   if (!Number.isFinite(id)) return {};
   const v = await getVehicle(id);
   if (!v) return {};
 
-  const { locale } = params;
   const dict = getDict(locale);
   const title = vehicleTitle(v);
   const price =
@@ -65,10 +65,10 @@ export async function generateMetadata({
 
 export default async function VehiclePage({
   params,
-}: { params: { id: string; locale: Locale } }) {
-  const id = Number(params.id);
+}: { params: Promise<{ id: string; locale: Locale }> }) {
+  const { id: idStr, locale } = await params;
+  const id = Number(idStr);
   if (!Number.isFinite(id)) notFound();
-  const { locale } = params;
   const v = await getVehicle(id);
   if (!v) notFound();
 
