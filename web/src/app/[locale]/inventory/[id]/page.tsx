@@ -1,7 +1,67 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getVehicle, formatMiles, vehicleTitle } from "@/lib/api";
 import { site } from "@/lib/site";
-import { getDict, type Locale } from "@/i18n/dictionaries";
+import { getDict, locales, type Locale } from "@/i18n/dictionaries";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string; locale: Locale };
+}): Promise<Metadata> {
+  const id = Number(params.id);
+  if (!Number.isFinite(id)) return {};
+  const v = await getVehicle(id);
+  if (!v) return {};
+
+  const { locale } = params;
+  const dict = getDict(locale);
+  const title = vehicleTitle(v);
+  const price =
+    v.price == null
+      ? dict.inventory.callForPrice
+      : `$${Math.round(v.price).toLocaleString()}`;
+
+  // Build a rich description from vehicle attributes
+  const descParts: string[] = [];
+  if (locale === "zh") {
+    descParts.push(`${title} — ${price}`);
+    if (v.mileage) descParts.push(`里程 ${formatMiles(v.mileage)}`);
+    if (v.color) descParts.push(v.color);
+    if (v.condition) descParts.push(v.condition);
+    descParts.push("佳音汽车精选二手车，全面检测，诚信可靠。");
+  } else {
+    descParts.push(`${title} — ${price}`);
+    if (v.mileage) descParts.push(`${formatMiles(v.mileage)}`);
+    if (v.color) descParts.push(v.color);
+    if (v.condition) descParts.push(v.condition);
+    descParts.push(
+      "Quality used vehicle, fully inspected by Chia-In Auto Repair in South El Monte, CA."
+    );
+  }
+  const description = descParts.join(" · ");
+
+  const path = `/${locale}/inventory/${id}`;
+
+  return {
+    title: `${title} — ${locale === "zh" ? site.nameZh : site.name}`,
+    description,
+    alternates: {
+      canonical: `${site.url}${path}`,
+      languages: Object.fromEntries(
+        locales.map((l) => [l, `${site.url}/${l}/inventory/${id}`])
+      ),
+    },
+    openGraph: {
+      title: `${title} — ${locale === "zh" ? site.nameZh : site.name}`,
+      description,
+      type: "article",
+      images: v.image_urls.length > 0
+        ? [{ url: v.image_urls[0], width: 1200, height: 630 }]
+        : [{ url: `${site.url}/chia in full ai copy.jpeg`, width: 1200, height: 630 }],
+    },
+  };
+}
 
 export default async function VehiclePage({
   params,

@@ -6,6 +6,10 @@
 export const site = {
   name: "Chia-In Auto Repair",
   legalName: "Chia-In Auto Repair Corp.",
+  /** Chinese business name used in structured data / hreflang. */
+  nameZh: "佳音汽车",
+  /** Public URL of the live site — no trailing slash. Set NEXT_PUBLIC_SITE_URL in production. */
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://chiainauto.com",
   phone: "+1(626)-448-4829",
   email: "info@chia-in-auto.example",
   address: {

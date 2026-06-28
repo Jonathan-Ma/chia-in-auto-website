@@ -1,9 +1,36 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { MapEmbed } from "@/components/MapEmbed";
 import { VehicleCard } from "@/components/VehicleCard";
 import { listVehicles } from "@/lib/api";
-import { getDict, type Locale } from "@/i18n/dictionaries";
+import { getDict, locales, type Locale } from "@/i18n/dictionaries";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  const path = `/${locale}`;
+
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    alternates: {
+      canonical: `${site.url}${path}`,
+      languages: Object.fromEntries(
+        locales.map((l) => [l, `${site.url}/${l}`])
+      ),
+    },
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      type: "website",
+    },
+  };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
